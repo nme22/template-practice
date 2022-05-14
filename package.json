@@ -1,0 +1,61 @@
+{
+  "name": "contracting-template",
+  "description": "",
+  "version": "1.0.1",
+  "repository": "https://github.com/domitriusclark/mdnext-base.git",
+  "author": "domitriusclark",
+  "main": "next.config.js",
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start",
+    "format": "yarn format:index && yarn format:pages && yarn format:src",
+    "format:index": "prettier --write \"*.{js,json,md}\"",
+    "format:pages": "prettier --write \"pages/**/*.js\"",
+    "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.8",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^6",
+    "next": "^12.1.6",
+    "next-connect": "^0.10.2",
+    "next-seo": "^4.26.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.2.0",
+    "react-query": "^3.19.6"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "pages/**/*.js": [
+      "prettier --write"
+    ],
+    "src/**/*.{js,md,mdx}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "keywords": [
+    "nextjs",
+    "mdx"
+  ],
+  "license": "ISC"
+}
